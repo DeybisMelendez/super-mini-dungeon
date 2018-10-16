@@ -51,7 +51,7 @@ func _input(event):
 		"position",
 		global_position,
 		dest,
-		0.4,
+		0.1,
 		Tween.TRANS_ELASTIC,
 		Tween.EASE_IN_OUT
 	)
