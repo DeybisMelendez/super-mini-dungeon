@@ -22,6 +22,7 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -63,6 +64,7 @@ editor_draw_drag_margin = false
 
 [node name="areaAtaque" type="Area2D" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( 8, 8 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -78,8 +80,21 @@ _sections_unfolded = [ "Transform" ]
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="Movement" type="Tween" parent="." index="4"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
 [connection signal="body_entered" from="areaAtaque" to="." method="_on_areaAtaque_body_entered"]
 
 [connection signal="body_exited" from="areaAtaque" to="." method="_on_areaAtaque_body_exited"]
+
+[connection signal="tween_completed" from="Movement" to="." method="_on_Movement_tween_completed"]
+
+[connection signal="tween_started" from="Movement" to="." method="_on_Movement_tween_started"]
 
 
