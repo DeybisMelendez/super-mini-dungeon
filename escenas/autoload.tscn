@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://sonidos/caja.wav" type="AudioStream" id=1]
+[ext_resource path="res://sonidos/golpe.wav" type="AudioStream" id=2]
+[ext_resource path="res://sonidos/nivelar.wav" type="AudioStream" id=3]
+[ext_resource path="res://sonidos/pocion.wav" type="AudioStream" id=4]
+[ext_resource path="res://sonidos/Raining Bits LowFi.ogg" type="AudioStream" id=5]
+
+[node name="Node" type="Node"]
+
+[node name="caja" type="AudioStreamPlayer" parent="." index="0"]
+
+stream = ExtResource( 1 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="golpe" type="AudioStreamPlayer" parent="." index="1"]
+
+stream = ExtResource( 2 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="nivelar" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="pocion" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="musica" type="AudioStreamPlayer" parent="." index="4"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+

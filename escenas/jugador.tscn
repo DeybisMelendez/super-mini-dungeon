@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/jugador.gd" type="Script" id=1]
-[ext_resource path="res://sprites/sprite_0.png" type="Texture" id=2]
+[ext_resource path="res://escenas/enemigo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/sprite_0.png" type="Texture" id=3]
+[ext_resource path="res://escenas/menuJuego.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -13,16 +15,18 @@ extents = Vector2( 6, 6 )
 custom_solver_bias = 0.0
 extents = Vector2( 24, 24 )
 
-[node name="jugador" type="KinematicBody2D" groups=[
+[node name="jugador" type="KinematicBody2D" index="0" groups=[
 "jugador",
 ]]
 
+z_index = 1
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
+enemigo = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -33,11 +37,11 @@ _sections_unfolded = [ "Transform" ]
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
 scale = Vector2( 2, 2 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 centered = false
 _sections_unfolded = [ "Offset", "Transform" ]
 
-[node name="Camera2D" type="Camera2D" parent="." index="2"]
+[node name="cam" type="Camera2D" parent="." index="2"]
 
 anchor_mode = 1
 rotating = false
@@ -54,17 +58,25 @@ smoothing_enabled = false
 smoothing_speed = 5.0
 offset_v = 0.0
 offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+_sections_unfolded = [ "Drag Margin" ]
+
+[node name="menu" parent="cam" index="0" instance=ExtResource( 4 )]
+
+margin_left = -256.0
+margin_top = -144.0
+margin_right = -256.0
+margin_bottom = -144.0
+rect_scale = Vector2( 2, 2 )
 
 [node name="areaAtaque" type="Area2D" parent="." index="3"]
 
-editor/display_folded = true
 position = Vector2( 8, 8 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -80,21 +92,8 @@ _sections_unfolded = [ "Transform" ]
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Movement" type="Tween" parent="." index="4"]
-
-repeat = false
-playback_process_mode = 1
-playback_speed = 1.0
-playback/active = false
-playback/repeat = false
-playback/speed = 1.0
-
 [connection signal="body_entered" from="areaAtaque" to="." method="_on_areaAtaque_body_entered"]
 
 [connection signal="body_exited" from="areaAtaque" to="." method="_on_areaAtaque_body_exited"]
-
-[connection signal="tween_completed" from="Movement" to="." method="_on_Movement_tween_completed"]
-
-[connection signal="tween_started" from="Movement" to="." method="_on_Movement_tween_started"]
 
 

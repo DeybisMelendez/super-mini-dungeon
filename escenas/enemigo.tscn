@@ -1,17 +1,23 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/enemigo.gd" type="Script" id=1]
 [ext_resource path="res://sprites/sprite_1.png" type="Texture" id=2]
+[ext_resource path="res://fuente/8x.tres" type="DynamicFont" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 6, 6 )
+extents = Vector2( 12, 12 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 56, 56 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
 
 [node name="enemigo" type="KinematicBody2D" groups=[
 "enemigo",
@@ -40,6 +46,48 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="vision" type="Area2D" parent="." index="2"]
 
 editor/display_folded = true
+show_behind_parent = true
+position = Vector2( 8, 8 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vision" index="0"]
+
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Label" type="Label" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -150.0
+margin_top = 20.0
+margin_right = 150.0
+margin_bottom = 35.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Mouse", "Rect", "Visibility", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="info" type="Area2D" parent="." index="4"]
+
 position = Vector2( 8, 8 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -50,24 +98,14 @@ audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="vision" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="info" index="0"]
 
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Movement" type="Tween" parent="." index="3"]
-
-repeat = false
-playback_process_mode = 1
-playback_speed = 1.0
-playback/active = false
-playback/repeat = false
-playback/speed = 1.0
+shape = SubResource( 3 )
 
 [connection signal="body_entered" from="vision" to="." method="_on_vision_body_entered"]
 
-[connection signal="tween_completed" from="Movement" to="." method="_on_Movement_tween_completed"]
+[connection signal="mouse_entered" from="info" to="." method="_on_info_mouse_entered"]
 
-[connection signal="tween_started" from="Movement" to="." method="_on_Movement_tween_started"]
+[connection signal="mouse_exited" from="info" to="." method="_on_info_mouse_exited"]
 
 

@@ -1,0 +1,22 @@
+id,es,en
+mensaje1,Has descansado,You have rested
+mensaje2,Has descansado y recuperado algo de salud,You have rested and regained some health
+mensaje3,Atacaste ,You attacked 
+mensaje3-2, nivel , level 
+mensaje4, ha aparecido, has appeared
+mensaje5, te ataco, attacked you
+mensaje6,No hay nada en la caja,There is nothing in the box
+mensaje7,Encontraste una pocion,You found a potion
+menuSalud,Salud: ,Health: 
+menuAtaque,Ataque: ,Attack: 
+menuNivel,Nivel: ,Level: 
+menuNombre,Nombre: ,Name: 
+mensaje8,"Bebiste una pocion, recuperaste algo de vida","You drank a potion, you recovered some life"
+mensaje9," ha sido derrotado, ganaste "," has been defeated, you won "
+mensaje10,¡Subiste de nivel!,Level up!
+menuPiso,Piso: ,Floor: 
+menuHecho,Hecho por Deybis Melendez para Godot Wild Jam #2,Made by Deybis Melendez for Godot Wild Jam #2
+menuPress,Presiona Space para comenzar,Press Space to start
+historia,"El rey te ha encargado encontrar el anillo de su esposa, que se le ha caido en un pozo maldito, recuperalo y vive.","The king has commissioned you to find his wife's ring, which has fallen into a cursed pit, retrieve it and live."
+finalBueno,"Has conseguido el anillo, de igual manera el Rey mando a ejecutarte, fin.","You have obtained the ring, in the same way the King ordered to execute you, order."
+finalMalo,"Has muerto, tal vez si lo intentas de nuevo logres conseguir el anillo.","You've died, maybe if you try again you'll get the ring."

@@ -1,26 +1,86 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/menuJuego.gd" type="Script" id=1]
-[ext_resource path="res://fuente/04B_03__.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://fuente/8x.tres" type="DynamicFont" id=2]
+[ext_resource path="res://escenas/trans.tscn" type="PackedScene" id=3]
 
-[sub_resource type="DynamicFont" id=1]
+[node name="menu" type="Control"]
 
-size = 8
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 2 )
-_sections_unfolded = [ "Font", "Font/fallback", "Settings" ]
-
-[node name="menu" type="CanvasLayer"]
-
-layer = 1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 script = ExtResource( 1 )
+_sections_unfolded = [ "Rect", "Visibility" ]
 
-[node name="0" type="Label" parent="." index="0"]
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 256.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 256, 24 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.141176, 0.231373, 0.27451, 1 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="ColorRect2" type="ColorRect" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 136.0
+margin_right = 256.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 256, 8 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.141176, 0.231373, 0.27451, 1 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="0" type="Label" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_right = 136.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+text = "abcdefg"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="1" type="Label" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -36,14 +96,16 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
 text = "abcdefg"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 
-[node name="1" type="Label" parent="." index="1"]
+[node name="2" type="Label" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -59,45 +121,49 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
 text = "abcdefg"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 
-[node name="2" type="Label" parent="." index="2"]
+[node name="3" type="Label" parent="." index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 8.0
-margin_top = 24.0
-margin_right = 136.0
-margin_bottom = 32.0
+margin_left = 166.0
+margin_right = 248.0
+margin_bottom = 8.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
 text = "abcdefg"
+align = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
 
-[node name="CenterContainer" type="HBoxContainer" parent="." index="3"]
+[node name="CenterContainer" type="HBoxContainer" parent="." index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 128.0
+margin_top = 136.0
 margin_right = 256.0
-margin_bottom = 136.0
+margin_bottom = 144.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -106,29 +172,30 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 1
 
-[node name="health" type="Label" parent="CenterContainer" index="0"]
+[node name="salud" type="Label" parent="CenterContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 13.0
-margin_right = 43.0
+margin_left = 54.0
+margin_right = 82.0
 margin_bottom = 8.0
-rect_min_size = Vector2( 30, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
 text = "Health:"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
+_sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
 
 [node name="3" type="Label" parent="CenterContainer" index="1"]
 
@@ -136,47 +203,49 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 47.0
-margin_right = 87.0
+margin_left = 86.0
+margin_right = 96.0
 margin_bottom = 8.0
-rect_min_size = Vector2( 40, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
 text = "20"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
+_sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
 
-[node name="hp2" type="Label" parent="CenterContainer" index="2"]
+[node name="ataque" type="Label" parent="CenterContainer" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 91.0
-margin_right = 121.0
+margin_left = 100.0
+margin_right = 129.0
 margin_bottom = 8.0
-rect_min_size = Vector2( 30, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
 text = "Attack:"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
+_sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
 
 [node name="4" type="Label" parent="CenterContainer" index="3"]
 
@@ -184,47 +253,49 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 125.0
-margin_right = 165.0
+margin_left = 133.0
+margin_right = 141.0
 margin_bottom = 8.0
-rect_min_size = Vector2( 40, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
 text = "10"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
+_sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
 
-[node name="hp3" type="Label" parent="CenterContainer" index="4"]
+[node name="nivel" type="Label" parent="CenterContainer" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 169.0
-margin_right = 199.0
+margin_left = 145.0
+margin_right = 168.0
 margin_bottom = 8.0
-rect_min_size = Vector2( 30, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
 text = "Level:"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
+_sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
 
 [node name="5" type="Label" parent="CenterContainer" index="5"]
 
@@ -232,22 +303,78 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 203.0
-margin_right = 243.0
+margin_left = 172.0
+margin_right = 175.0
 margin_bottom = 8.0
-rect_min_size = Vector2( 40, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
 text = "1"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
+_sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="6" type="Label" parent="CenterContainer" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 179.0
+margin_right = 195.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+text = "XP: "
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="7" type="Label" parent="CenterContainer" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 199.0
+margin_right = 202.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+text = "1"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="trans" parent="." index="7" instance=ExtResource( 3 )]
+
+mouse_filter = 2
+_sections_unfolded = [ "Mouse", "Rect", "Visibility" ]
 
 

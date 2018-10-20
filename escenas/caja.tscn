@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/caja.gd" type="Script" id=1]
+[ext_resource path="res://escenas/pocion.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/sprite_09.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 6, 6 )
+
+[node name="caja" type="StaticBody2D" groups=[
+"enemigo",
+]]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 1 )
+pocion = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+centered = false
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+
